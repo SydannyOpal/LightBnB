@@ -1,6 +1,13 @@
 const properties = require('./json/properties.json');
 const users = require('./json/users.json');
 
+const { Pool } = require('pg');
+const pool = new Pool();
+pool.query(`SELECT title FROM properties LIMIT 10;`).then(response => {console.log(response)});
+
+
+
+
 /// Users
 
 /**
